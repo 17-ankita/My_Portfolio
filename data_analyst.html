@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -806,3 +807,813 @@ window.addEventListener("load", revealOnScroll);
 </script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Gumma Ankita – Data Analyst Portfolio" />
+<title>Gumma Ankita | Data Analyst Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #f4f7fb;
+  --white: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --blue: #2563eb;
+  --cyan: #06b6d4;
+  --green: #10b981;
+  --purple: #7c3aed;
+  --line: rgba(15, 23, 42, 0.08);
+  --shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+  --shadow-strong: 0 28px 80px rgba(37, 99, 235, 0.18);
+  --radius: 28px;
+  --nav-h: 75px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(6, 182, 212, 0.12), transparent 30%),
+    var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6vw;
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--line);
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: var(--text);
+}
+
+.logo span {
+  color: var(--blue);
+}
+
+.nav-links {
+  display: flex;
+  gap: 26px;
+  align-items: center;
+}
+
+.nav-links a {
+  font-size: 0.84rem;
+  font-weight: 800;
+  color: var(--muted);
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--blue);
+}
+
+.hero {
+  min-height: 100vh;
+  padding: 140px 6vw 80px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.badge {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.08);
+  color: var(--blue);
+  font-size: 0.8rem;
+  font-weight: 900;
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  font-size: clamp(3.7rem, 8vw, 6.8rem);
+  line-height: 0.95;
+  font-weight: 900;
+  letter-spacing: -0.055em;
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  color: var(--blue);
+}
+
+.hero h2 {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--muted);
+  max-width: 650px;
+  margin-bottom: 35px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 24px;
+  border-radius: 999px;
+  font-weight: 800;
+  transition: 0.3s;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--blue), var(--purple));
+  color: white;
+  box-shadow: 0 18px 40px rgba(37, 99, 235, 0.25);
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--text);
+  border: 1px solid var(--line);
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+}
+
+.dashboard-card {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 28px;
+  border-radius: 36px;
+  box-shadow: var(--shadow-strong);
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-card::before {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: rgba(37, 99, 235, 0.12);
+  right: -80px;
+  top: -80px;
+}
+
+.dashboard-card h3,
+.dashboard-card p,
+.kpi-grid {
+  position: relative;
+  z-index: 1;
+}
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.kpi {
+  padding: 22px;
+  border-radius: 24px;
+  background: white;
+  border: 1px solid var(--line);
+}
+
+.kpi strong {
+  display: block;
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+.kpi span {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+section {
+  padding: 100px 6vw;
+}
+
+.section-label {
+  color: var(--blue);
+  font-size: 0.82rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 14px;
+}
+
+.section-title {
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  margin-bottom: 18px;
+}
+
+.section-title span {
+  color: var(--blue);
+}
+
+.section-desc {
+  max-width: 740px;
+  line-height: 1.9;
+  color: var(--muted);
+}
+
+.analytics-banner {
+  margin-top: 40px;
+  padding: 35px;
+  border-radius: 32px;
+  background: linear-gradient(135deg, var(--blue), var(--purple));
+  color: white;
+  box-shadow: 0 25px 60px rgba(37, 99, 235, 0.25);
+}
+
+.analytics-banner h3 {
+  font-size: 2rem;
+  margin-bottom: 14px;
+}
+
+.analytics-banner p {
+  line-height: 1.8;
+  max-width: 800px;
+}
+
+.skills-grid,
+.projects-grid,
+.cert-grid {
+  display: grid;
+  gap: 22px;
+  margin-top: 45px;
+}
+
+.skills-grid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.skill-card,
+.project-card,
+.cert-card {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 28px;
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  transition: 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.skill-card:hover,
+.project-card:hover,
+.cert-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-strong);
+}
+
+.skill-icon {
+  font-size: 2rem;
+  margin-bottom: 18px;
+}
+
+.skill-card h3,
+.project-card h3,
+.cert-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
+.skill-card p,
+.project-card p,
+.cert-card p {
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+.projects-grid {
+  grid-template-columns: 1fr 1fr;
+}
+
+.project-tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.project-tags span {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.08);
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--blue);
+}
+
+.project-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.project-links a {
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.08);
+  color: var(--blue);
+  font-size: 0.82rem;
+  font-weight: 800;
+  transition: 0.3s;
+  border: 1px solid rgba(37, 99, 235, 0.12);
+}
+
+.project-links a:hover {
+  background: var(--blue);
+  color: white;
+  transform: translateY(-3px);
+}
+
+.contact {
+  text-align: center;
+}
+
+.contact-box {
+  margin-top: 40px;
+  background: white;
+  padding: 60px 30px;
+  border-radius: 40px;
+  box-shadow: var(--shadow-strong);
+}
+
+.contact h2 {
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: 0.95;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  margin-bottom: 20px;
+}
+
+.contact h2 span {
+  color: var(--blue);
+}
+
+.contact p {
+  max-width: 650px;
+  margin: 0 auto 30px;
+  line-height: 1.9;
+  color: var(--muted);
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.contact-links a {
+  padding: 14px 18px;
+  border-radius: 999px;
+  font-weight: 800;
+  background: rgba(37, 99, 235, 0.08);
+  color: var(--blue);
+  transition: 0.3s;
+}
+
+.contact-links a:hover {
+  background: var(--blue);
+  color: white;
+  transform: translateY(-3px);
+}
+
+footer {
+  padding: 24px 6vw;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+  .hero,
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hero {
+    padding-top: 120px;
+  }
+
+  .hero-buttons,
+  .contact-links {
+    flex-direction: column;
+  }
+
+  .btn,
+  .contact-links a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .kpi-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Ankita<span> Gumma</span></div>
+  <div class="nav-links">
+    <a href="frontend.html">Frontend</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="reveal">
+    <div class="badge">Available for Data Analytics Internships</div>
+    <h1>Turning <span>data</span><br />into insights.</h1>
+    <h2>Data Analyst focused on dashboards, business insights, data visualization, and analytical problem solving.</h2>
+    <p>
+      BCA student passionate about transforming raw data into meaningful insights using Power BI, Excel, SQL, and Python.
+      I enjoy creating dashboards, analyzing business patterns, and presenting data in a visually understandable way.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="#contact" class="btn btn-secondary">Contact Me</a>
+      <a href="frontend.html" class="btn btn-secondary">Frontend Portfolio</a>
+    </div>
+  </div>
+
+  <div class="dashboard-card reveal">
+    <h3 style="font-size:1.6rem;margin-bottom:12px;">Analytics Dashboard Overview</h3>
+    <p style="color:var(--muted);line-height:1.8;">
+      Focused on KPI analysis, business dashboards, data cleaning, visualization, and reporting.
+    </p>
+
+    <div class="kpi-grid">
+      <div class="kpi">
+        <strong>4+</strong>
+        <span>Analytics Projects</span>
+      </div>
+      <div class="kpi">
+        <strong>3</strong>
+        <span>Certifications</span>
+      </div>
+      <div class="kpi">
+        <strong>Power BI</strong>
+        <span>Dashboarding Tool</span>
+      </div>
+      <div class="kpi">
+        <strong>SQL</strong>
+        <span>Data Querying</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-label reveal">About Me</div>
+  <h2 class="section-title reveal">Passionate about <span>analytics & insights.</span></h2>
+  <p class="section-desc reveal">
+    I enjoy solving business problems using data analysis and dashboards. My interests include Power BI dashboard creation,
+    SQL querying, Excel analysis, data visualization, and finding meaningful trends from datasets. I focus on presenting data
+    in a clean and understandable format.
+  </p>
+
+  <div class="analytics-banner reveal">
+    <h3>Business + Data + Visualization</h3>
+    <p>
+      I believe analytics is not only about numbers, but also about presenting insights in a way businesses can understand.
+      My projects focus on dashboards, business intelligence, customer analysis, market insights, and data-driven decision making.
+    </p>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="section-label reveal">Skills</div>
+  <h2 class="section-title reveal">Tools & <span>technologies.</span></h2>
+
+  <div class="skills-grid">
+    <div class="skill-card reveal">
+      <div class="skill-icon">📊</div>
+      <h3>Power BI</h3>
+      <p>Interactive dashboards, KPI cards, charts, business reports, filters, and data storytelling.</p>
+    </div>
+
+    <div class="skill-card reveal">
+      <div class="skill-icon">📈</div>
+      <h3>Excel</h3>
+      <p>Data cleaning, pivot tables, formulas, business reporting, dashboards, and visualization.</p>
+    </div>
+
+    <div class="skill-card reveal">
+      <div class="skill-icon">🗄</div>
+      <h3>SQL</h3>
+      <p>Database querying, joins, filtering, aggregation, and extracting meaningful insights from datasets.</p>
+    </div>
+
+    <div class="skill-card reveal">
+      <div class="skill-icon">🐍</div>
+      <h3>Python</h3>
+      <p>Data analysis, preprocessing, CSV handling, and analytical workflow automation.</p>
+    </div>
+
+    <div class="skill-card reveal">
+      <div class="skill-icon">📉</div>
+      <h3>Data Visualization</h3>
+      <p>Charts, business dashboards, reporting visuals, and trend analysis presentation.</p>
+    </div>
+
+    <div class="skill-card reveal">
+      <div class="skill-icon">🧠</div>
+      <h3>Business Analysis</h3>
+      <p>Understanding business problems, identifying patterns, and presenting strategic insights.</p>
+    </div>
+      <div class="skill-card reveal">
+  <div class="skill-icon">📊</div>
+  <h3>Tableau</h3>
+  <p>
+    Creating interactive dashboards, visual reports, charts,
+    and business insights using Tableau for effective data storytelling.
+  </p>
+</div>
+<div class="skill-card reveal">
+  <div class="skill-icon">📑</div>
+  <h3>Data Reporting</h3>
+  <p>
+    Preparing analytical reports, summarizing business data,
+    tracking KPIs, and presenting insights for decision making.
+  </p>
+</div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="section-label reveal">Projects</div>
+  <h2 class="section-title reveal">Featured <span>analytics work.</span></h2>
+
+  <div class="projects-grid">
+    <div class="project-card reveal">
+      <h3>Crime Data Analytics</h3>
+      <p>
+        Developed a crime analytics dashboard to analyze crime patterns,
+    regional crime distribution, crime categories, yearly trends,
+    and public safety insights using data visualization techniques.
+    The dashboard helps identify high-crime areas, trend variations,
+    and supports data-driven analysis for better understanding of crime statistics.
+      </p>
+      <div class="project-tags">
+        <span>Power BI</span>
+        <span>Excel</span>
+        <span>Python</span>
+        <span>SQL</span>
+      </div>
+      <div class="project-links">
+        <a href="https://crimedataanalysis-mbvwjku5ptduzwlqddl5yk.streamlit.app/" target="_blank">Live Demo ↗</a>
+        <a href="https://github.com/17-ankita" target="_blank">GitHub ↗</a>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <h3>Online Shopping Behaviour Analysis</h3>
+      <p>
+        Analyzed online shopping behavior patterns to identify customer trends, purchasing insights, and business performance indicators
+        using dashboards and visualization techniques.
+      </p>
+      <div class="project-tags">
+        <span>Power BI</span>
+        <span>Excel</span>
+        <span>Python</span>
+        <span>SQL</span>
+        <span>Data Analysis</span>
+      </div>
+      <div class="project-links">
+        <a href="https://onlineshoppingbehavioranalysis.streamlit.app/" target="_blank">Live Demo ↗</a>
+        <a href="https://github.com/17-ankita" target="_blank">GitHub ↗</a>
+      </div>
+    </div>
+    <div class="project-card reveal">
+      <h3>Mobile App Usage Analysis</h3>
+      <p>
+            Analyzed mobile application usage patterns to understand user behavior,
+    screen time trends, app engagement, category preferences,
+    and usage frequency through interactive dashboards and visual reports.
+    The project focused on identifying user activity patterns and generating
+    insights for better user experience and engagement strategies.
+      </p>
+      <div class="project-tags">
+        <span>Power BI</span>
+        <span>Excel</span>
+        <span>Python</span>
+        <span>SQL</span>
+        <span>Data Analysis</span>
+      </div>
+      <div class="project-links">
+        <a href="https://mobile-app-usage-analysis.streamlit.app/" target="_blank">Live Demo ↗</a>
+        <a href="https://github.com/17-ankita" target="_blank">GitHub ↗</a>
+      </div>
+    </div>
+    <div class="project-card reveal">
+      <h3>HR Attrition Analytics Dashboard</h3>
+      <p>
+        Built an interactive HR analytics dashboard to analyze employee attrition,
+        workforce trends, department-wise turnover, salary distribution,
+        job satisfaction, and employee performance metrics.
+        The dashboard helps identify key reasons behind attrition and supports
+        data-driven HR decision-making through clear visual insights.
+      </p>
+      <div class="project-tags">
+        <span>Power BI</span>
+        <span>Excel</span>
+        <span>Data Visualization</span>
+        <span>Business Analysis</span>
+      </div>
+      <div class="project-links">
+        <a href="https://hr-attrition-analytics-1234.streamlit.app/" target="_blank">Live Demo ↗</a>
+        <a href="https://github.com/17-ankita" target="_blank">GitHub ↗</a>
+      </div>
+    </div>
+        <div class="project-card reveal">
+      <h3>Stock Market Analysis</h3>
+      <p>
+        Analyzed 500 Indian stock market companies with market capitalization below ₹500 crore 
+        using Power BI dashboards and business intelligence techniques. The project focused on
+        market landscape analysis, regional opportunities, website quality assessment,
+        UX vs performance comparison, profitability trends, ROCE analysis,
+        and strategic business recommendations.
+      </p>
+      <div class="project-tags">
+        <span>Power BI</span>
+        <span>Excel</span>
+        <span>Dashboards</span>
+        <span>Research & Analytics</span>
+      </div>
+      <div class="project-links">
+        <a href="https://stock-market-analysis500.streamlit.app/" target="_blank">Live Demo ↗</a>
+        <a href="https://github.com/17-ankita" target="_blank">GitHub ↗</a>
+      </div>
+    </div>
+    <div class="project-card reveal">
+  <h3>Customer Churn Analysis</h3>
+  <p>
+    Built an interactive telecom customer churn analytics dashboard using Python,
+    Streamlit, SQL, and data visualization techniques. The project focused on
+    customer retention analysis, churn trends, revenue insights, contract behavior,
+    internet service analysis, payment method patterns, tenure analysis,
+    and business intelligence reporting to identify factors influencing customer churn.
+  </p>
+
+  <div class="project-tags">
+    <span>Power BI</span>
+    <span>Excel</span>
+    <span>Python</span>
+    <span>Streamlit</span>
+    <span>SQL</span>
+    <span>Data Analytics</span>
+  </div>
+  <div class="project-links">
+    <a href="https://customer-churn-analysis500.streamlit.app/" target="_blank">Live Demo ↗</a>
+    <a href="https://github.com/17-ankita" target="_blank">GitHub ↗</a>
+  </div>
+</div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="section-label reveal">Achievements</div>
+  <h2 class="section-title reveal">Certifications & <span>learning.</span></h2>
+
+  <div class="cert-grid">
+    <div class="cert-card reveal">
+      <h3>Microsoft Power BI</h3>
+      <p>Coursera certification focused on dashboarding, data visualization, and business intelligence concepts.</p>
+    </div>
+
+    <div class="cert-card reveal">
+      <h3>Data Analytics and Science</h3>
+      <p>HP LIFE certification covering data concepts, analytics workflows, and reporting.</p>
+    </div>
+
+    <div class="cert-card reveal">
+      <h3>IBM AI & Cloud Internship</h3>
+      <p>Practical exposure to artificial intelligence concepts, cloud technologies, and modern industry tools.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-box reveal">
+    <h2>Let’s build<br /><span>data-driven solutions.</span></h2>
+    <p>
+      Open to internships, analyst roles, dashboard projects, and opportunities in business intelligence and data analytics.
+    </p>
+
+    <div class="contact-links">
+      <a href="mailto:gummaankita17@gmail.com">Email Me</a>
+      <a href="frontend.html">Frontend Portfolio</a>
+      <a href="https://github.com/17-ankita" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/gumma-ankita78990b302" target="_blank">LinkedIn</a>
+      <a href="tel:+917759852493">Call Me</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Gumma Ankita — Data Analyst Portfolio</p>
+  <p>Data Analyst Portfolio · <a href="frontend.html">View Frontend Portfolio</a></p>
+</footer>
+
+<script>
+const reveals = document.querySelectorAll(".reveal");
+
+function revealOnScroll() {
+  reveals.forEach((el) => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight - 80) {
+      el.classList.add("active");
+    }
+  });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
+</script>
+</body>
+</html>
+>>>>>>> e9599fd693cf7602b61a4831b7efee427e04db18
